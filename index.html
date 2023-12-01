@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            animation: gradientAnimation 5s infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+         @keyframes gradientAnimation {
+      0% {
+        background-image: linear-gradient(to right, #ffcccc, #ff99cc);
+      }
+      50% {
+        background-image: linear-gradient(to right, #ff99cc, #cc99ff);
+      }
+      100% {
+        background-image: linear-gradient(to right, #cc99ff, #ffcccc);
+      }
+    }
+        .container {
+            width: 800px;
+            font-size: 0px;
+        }
+        .img-content {
+            box-shadow: 0px 0px 20px black;
+            float: left;   
+            border-radius: 15px;
+        }
+        img {
+            border-radius: 15px;
+        }
+        .login-page {
+            width: 400px;
+            height: 571px;
+            float: left;
+            text-align: center;
+            position: relative;
+            background-color: green;
+            box-shadow: 0px 0px 20px black;
+            background: radial-gradient(circle at center, #2196F3, #E3F2FD);
+            border-radius: 15px;
+        }
+        span {
+            font-size: 50px;
+            position: absolute;
+            top: 72px;
+            left: 145px;
+            color: hotpink;
+        }
+        input {
+            margin: 0;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+        }
+        input:focus {
+            outline: none;
+            border-color: transparent;
+        }
+        input::placeholder {
+            color: pink;
+        }
+        .input-account {
+            position: absolute;
+            top: 228px;
+            left: 130px;
+            font-size: 15px;
+        }
+        .input-password {
+            position: absolute;
+            top: 280px;
+            left: 130px;
+            font-size: 15px;
+        }
+        .input-account,
+        .input-password {
+            border-bottom: 2px solid palevioletred;
+        }
+        .custom-input {
+            width: 158px;
+            position: absolute;
+            top: 340px;
+            left: 130px;
+            border: 2px solid #ffcccc;
+            border-radius: 10px;
+            background-image: linear-gradient(to right, #ffcccc, #ff99cc);;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .custom-input2 {
+            width: 158px;
+            position: absolute;
+            top: 380px;
+            left: 130px;
+            border-bottom:2px solid pink ;
+            font-size: 15px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img-content">
+            <img src="./images/1701405244658.jpg" alt="芙芙">
+        </div>
+        <div class="login-page">
+            <span>Login</span>
+            <form action="#">
+                <div class="input-account">
+                    <input type="text" placeholder="请输入账号">
+                </div>
+                <div class="input-password">
+                    <input type="password" placeholder="请输入密码">
+                </div>
+                <input type="submit" value="登录" class="custom-input">
+                <input type="reset" value="Input error?" class="custom-input2">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
