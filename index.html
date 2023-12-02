@@ -96,13 +96,21 @@
             cursor: pointer;
         }
         .custom-input2 {
-            width: 158px;
+            width: 120px;
+            font-size: 15px;
+            color: white;
+            cursor: pointer;
+            text-decoration: underline;
+            position: absolute;
+            top: 410px;
+            left: 125px;
+        }
+        .custom-input3 {
+            font-size: 15px;
+            display: inline-block;
             position: absolute;
             top: 380px;
             left: 130px;
-            border-bottom:2px solid pink ;
-            font-size: 15px;
-            color: white;
             cursor: pointer;
         }
     </style>
@@ -122,7 +130,12 @@
                     <input type="password" placeholder="请输入密码">
                 </div>
                 <input type="submit" value="登录" class="custom-input">
-                <input type="reset" value="Input error?" class="custom-input2">
+                <input type="reset" value="Forget password" class="custom-input2">
+                <div class="custom-input3">
+                    <label>
+                    <input type="checkbox" value="keeppassword" name="remember">保持登录状态
+                    </label>
+                </div>
             </form>
         </div>
     </div>
