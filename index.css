@@ -80,11 +80,11 @@ body {
     background: rgba(238, 66, 66, 0.822);
 }
 .top-nav-list {
-    width: 800px;
+    width: 760px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 .top-nav-list .button {
     font-size: 25px;
@@ -130,10 +130,17 @@ body {
 }
 .top-nav .top-nav-list .button ul li {
     transition: all linear 0.2s;
-
 }
 .top-nav .top-nav-list .button ul li:hover {
     background-color: #50536e;
+}
+.top-nav .top-nav-list span {
+    transition: all linear 0.2s;
+    color: white;
+    cursor: pointer;
+}
+.top-nav .top-nav-list span:hover {
+    color: #50536e;
 }
 .icon {
     font-size: 30px;
