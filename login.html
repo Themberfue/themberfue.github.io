@@ -75,7 +75,15 @@
             border: 1px solid gainsboro;
             padding: 10px;
             background-color: ghostwhite;  
-            box-shadow: inset 1px 1px 5px black; 
+            box-shadow: inset 1px 1px 5px gainsboro; 
+            transition: all 0.2s linear;
+        }
+        .user:focus,.pass:focus {
+            border: 1px solid deepskyblue;
+            box-shadow: inset 1px 1px 5px deepskyblue;
+        }
+        input[type="text"]:focus::placeholder,input[type="password"]:focus::placeholder {
+            color: deepskyblue;
         }
         .login,.U,.user,.P,
         .pass,.forget,.button,
@@ -142,7 +150,7 @@
         }
         .divider {
             top: 490px;
-            left: 158px;
+            left: 155px;
         }
         .divider-text {
             margin: 0 30px;
