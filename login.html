@@ -12,7 +12,7 @@
         }
         a {
             text-decoration: none;
-            color: blue;
+            color: deepskyblue;
         }
         @font-face {
             font-family: 'login';
@@ -23,6 +23,22 @@
             url('./字体/webfont.woff') format('woff'), /* chrome、firefox */
             url('./字体/webfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
             url('./字体/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+        }
+        /* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+        @font-face {
+        font-family: "阿里妈妈东方大楷1 Regular";
+        font-weight: 400;
+        src: url("//at.alicdn.com/wf/webfont/Pywfb7Ehjvrn/3KbhP7eiGcg1.woff2") format("woff2"),
+        url("//at.alicdn.com/wf/webfont/Pywfb7Ehjvrn/x04JNUzjsd4V.woff") format("woff");
+        font-display: swap;
+        }
+        /* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+        @font-face {
+        font-family: "阿里妈妈东方大楷2 Regular";
+        font-weight: 400;
+        src: url("//at.alicdn.com/wf/webfont/Pywfb7Ehjvrn/riup7giXeZ3i.woff2") format("woff2"),
+        url("//at.alicdn.com/wf/webfont/Pywfb7Ehjvrn/hAZjb7kSY7aM.woff") format("woff");
+        font-display: swap;
         }
         body {
             margin: 0px;
@@ -63,7 +79,7 @@
         }
         .login,.U,.user,.P,
         .pass,.forget,.button,
-        .footer,.or {
+        .footer,.or,.divider {
             position: absolute;
         }
         .login {
@@ -72,10 +88,14 @@
             left: 260px;
             font-family: 'login';
             font-weight: bold;
+            color: white;
         }
         .U {
             top: 200px;
             left: 175px;
+            font-family: "阿里妈妈东方大楷1 Regular";
+            font-size: 18px;
+            font-weight: normal;
         }
         .user {
             top: 222px;
@@ -84,6 +104,9 @@
         .P {
             top: 276px;
             left: 175px;
+            font-family: "阿里妈妈东方大楷2 Regular";
+            font-size: 18px;
+            font-weight: normal;
         }
         .pass {
             top: 302px;
@@ -92,21 +115,43 @@
         .forget {
             top: 340px;
             left: 353px;
+            cursor: pointer;
         }
         .button {
-            width: 251px;
-            height: 48px;
+            width: 80px;
+            height: 80px;
             background-color: deepskyblue;
             color: white;
             font-size: 25px;
-            border-radius: 10px;
-            top: 386px;
-            left: 175px;
+            border-radius: 50%;
+            box-shadow: 1px 1px 20px deepskyblue;
+            top: 370px;
+            left: 255px;
             cursor: pointer;
+            transition: all 0.2s linear;
+        }
+        .button:hover {
+            width: 251px;
+            height: 80px;
+            border-radius: 20px;
+            left: 175px;
         }
         .footer {
             top: 458px;
             left: 242px;
+        }
+        .divider {
+            top: 490px;
+            left: 158px;
+        }
+        .divider-text {
+            margin: 0 30px;
+        }
+        .line {
+            width:100px;
+            height: 1px;
+            background-color: black;
+            display: inline-block;
         }
         .QQ,.Wechat {
             display: inline-block;
@@ -118,14 +163,14 @@
         }
         .QQ {
             background-image: url('./images/社交-QQ\(social-qq\)_爱给网_aigei_com.webp');
-            top: 518px;
-            left: 206px;
+            top: 528px;
+            left: 201px;
             cursor: pointer;
         }
         .Wechat {
             background-image: url('./images/icon_微信-logo_爱给网_aigei_com.webp');
-            top: 518px;
-            left: 352px;
+            top: 530px;
+            left: 374px;
             cursor: pointer;
         }
     </style>
@@ -135,14 +180,19 @@
         <div class="inner">
             <div class="login">登录</div>
             <form action="#">
-                <span class="U">Username</span>
-                <input class="user" type="text" placeholder="Username">
-                <span class="P">Password</span>
+                <span class="U">用户名称</span>
+                <input class="user" type="text" placeholder="username">
+                <span class="P">密码</span>
                 <input class="pass" type="password" placeholder="password">
                 <input type="reset" class="forget" value="忘记密码？">
                 <input class="button" type="button" value="登录">
                 <div class="footer"><span>还没有账号？</span><a href="#">注册</a></div>
             </form>
+            <div class="divider">
+                <div class="line"></div>
+                <span class="divider-text">or</span>
+                <div class="line"></div>
+            </div>
             <div class="QQ"></div>
             <div class="Wechat"></div>
         </div>
