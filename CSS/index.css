@@ -17,6 +17,14 @@ button {
     color: white;
     cursor: pointer;
 }
+input {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+}
 .head-self,.top-bar,.slideshow-area {
     animation: start-move 0.3s ease-in-out 1;
 
@@ -153,7 +161,7 @@ button {
     position: absolute;
     z-index: 1;
     width: 100%;
-    height: 700px;
+    height: 100vh;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .tab-content.active {
@@ -186,21 +194,73 @@ button {
     cursor: pointer;
 }
 #game-content .GTA5 {
-    background-image: url('../images/GTA5.jpg');
+    background-image: url('../images/GTA5.webp');
     margin-left: 50px;
 }
 #game-content .GTAOnline {
-    background-image: url('../images/GTAOnline.jpg');
+    background-image: url('../images/GTAOnline.webp');
 }
 #game-content .RedDeadRedemption2 {
-    background-image: url('../images/reddeadredemption2.jpg');
+    background-image: url('../images/reddeadredemption2.webp');
 }
 #game-content .RedReadOnline {
-    background-image: url('../images/reddeadonline.jpg');
+    background-image: url('../images/reddeadonline.webp');
 }
 #game-content .GTATrilogy {
-    background-image: url('../images/GTATrilogy.jpg');
+    background-image: url('../images/GTATrilogy.webp');
     margin-right: 50px;
+}
+#search-content {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(38,38,38);
+}
+#search-content .search-content-left .search-ico {
+    background-image: url('../images/search-icon.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+#search-content .search-content-left input {
+    width: 400px;
+    vertical-align: middle;
+    height: 40px;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(232,232,232);
+}
+#search-content .search-content-left input::placeholder {
+    font-weight: bold;
+    color: rgb(232,232,232);
+}
+#search-content .search-content-right .prompt {
+    display: inline-block;
+    margin: 0 10px;
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+    border-radius: 35px;
+    cursor: pointer;
+    background-color: rgb(70,70,70);
+    transition: all 0.2s linear;
+}
+#search-content .search-content-right .prompt:hover {
+    background-color: rgb(125,125,125);
+}
+#search-content .search-content-right .prompt.clicked {
+    background-color: white;
+    color: black;
+}
+#search-content .search-content-right .prompt:nth-child(4) {
+    margin-right: 30px;
 }
 @keyframes start-move {
     0% {
@@ -211,7 +271,6 @@ button {
         opacity: 1;
         transform: translateY(0px);
     }
-
 }
 .slideshow-area {
     display: flex;
@@ -291,4 +350,132 @@ button {
 }
 .button-container .slideshow-area-button.active {
     background-color: white; /* 点击后的背景色为白色 */
+}
+@font-face {
+    font-family: GTA font;
+    src: url('../字体/pricedown-bl-1.ttf');
+}
+@font-face {
+    font-family: RDR font;
+    src: url('../字体/chinese rocks rg.ttf');
+}
+.main-containter {
+    background-color: rgb(11,11,11);
+}
+.container-two,
+.container-three {
+    width: 100%;
+    background-color: rgb(11,11,11);
+}
+.container-two .top-bar-two,
+.container-two .top-bar-two-vice {
+    color: white;
+    padding-top: 30px;
+    padding-left: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    cursor: pointer;
+    background-color: rgb(11,11,11);
+}
+.container-two .top-bar-two-vice {
+    font-size: 25px;
+    padding: 0px;
+    margin-left: 100px;
+    color: rgb(255,176,1);
+}
+.container-two .introduce {
+    width: 1404px;
+    height: 950px;
+    padding: 0 70px;
+    position: relative;
+}
+.container-two .introduce .picture {
+    width: 1544px;
+    height: 950px;
+    background-image: url('../images/GTA系列/《Grand Theft Auto》Series.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.container-two .introduce .text {
+    display: inline-block;
+    width: 1544px;
+    height: 950px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    background-color: black;
+    color: rgb(255,176,1);
+    transition: all 0.5s linear;
+    font-size: 30px;
+    text-indent: 30px;
+    font-weight: bold;
+    font-family: GTA font;
+}
+.container-two .introduce .text .paragragh1,
+.container-two .introduce .text .paragragh2,
+.container-two .introduce .text .paragragh3,
+.container-two .introduce .text .paragragh4 {
+    padding: 20px;
+}
+.container-two .introduce .text .paragragh5 {
+    column-count: 6;
+    column-rule: 2px dashed rgb(255,176,1);
+    font-size: 19px;
+    padding: 20px;
+}
+.container-two .introduce:hover .text {
+    opacity: 0.8;
+}
+.container-three .top-bar-three-vice {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    padding: 0px;
+    margin-left: 100px;
+    color: rgb(205,6,21);
+    font-weight: bold;
+}
+.container-three .introduce {
+    width: 1404px;
+    height: 477px;
+    padding: 0 70px;
+    position: relative;
+}
+.container-three .introduce .picture {
+    width: 1544px;
+    height: 477px;
+    background-image: url('../images/RDR系列/RDR Series.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.container-three .introduce .text {
+    display: inline-block;
+    width: 1544px;
+    height: 477px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    background-color: black;
+    color: rgb(205,6,21);
+    transition: all 0.5s linear;
+    font-size: 37px;
+    text-indent: 37px;
+    font-weight: bold;
+    font-family: RDR font;
+}
+.container-three .introduce .text .paragragh1,
+.container-three .introduce .text .paragragh2 {
+    padding: 20px;
+}
+.container-three .introduce:hover .text {
+    opacity: 0.9;
 }
