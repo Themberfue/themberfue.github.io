@@ -1,0 +1,130 @@
+<div class="slideshow-area">
+        <div id="history-content" class="tab-content">历史与创立的内容...</div>
+        <div id="game-content" class="tab-content">
+            <div class="top">精选游戏</div>
+            <div class="bottom">
+                <div class="game GTA5"></div>
+                <div class="game GTAOnline"></div> 
+                <div class="game RedDeadRedemption2"></div>
+                <div class="game RedReadOnline"></div>
+                <div class="game GTATrilogy"></div>
+            </div>
+        </div>
+        <div id="affect-content" class="tab-content">创新与影响的内容...</div>
+        <div id="critical-content" class="tab-content">争议与批评的内容...</div>
+        <div id="culture-content" class="tab-content">文化影响的内容...</div>
+        <div id="future-content" class="tab-content">未来展望的内容...</div>
+        <div id="search-content" class="tab-content">搜索内容...</div>
+        <div class="slideshow-area-left">
+            <div class="shell">
+                <ul class="images">
+                    <li class="img"></li>
+                    <li class="img"></li>
+                    <li class="img"></li>
+                    <li class="img"></li>
+                    <li class="img"></li>
+                </ul>
+                <ul class="min">
+                    <li class="m"></li>
+                    <li class="m"></li>
+                    <li class="m"></li>
+                    <li class="m"></li>
+                    <li class="m"></li>
+                </ul>
+                <div class="button">
+                    <div class="button-left">&lt;</div>
+                    <div class="button-right">&gt;</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slideshow-area-right">
+            <div class="explain explain1">
+                <div class="text">
+                    <div class="text1">Grand Theft Auto VI</div> 
+                    <div class="text2">Trailer 1</div>
+                </div>
+                <a href="./videos/GTA6.html" target="_blank">马上观看</a>
+            </div>
+            <div class="explain explain2">
+                <div class="text">
+                    <div class="text1">Grand Theft Auto Online</div>
+                    <div class="text2">The Chop Shop</div>
+                </div>
+                    <a href="./videos/The Chop Shop.html" target="_blank">马上观看</a>
+            </div>
+            <div class="explain explain3">
+                <div class="text">
+                    <div class="text1">Grand Theft Auto Online</div>
+                    <div class="text2">《圣安地列斯雇佣兵》现已推出</div>
+                </div>
+                <a href="./videos/San.html" target="_blank">马上观看</a>
+            </div>
+            <div class="explain explain4">
+                <div class="text">
+                    <div class="text1">Grand Theft Auto Online</div>
+                    <div class="text2">迎接万圣节</div>
+                </div>
+                <a href="./videos/Holloween.html" target="_blank">马上观看</a>
+            </div>
+            <div class="explain explain5">
+                <div class="text">
+                    <div class="text1">Grand Theft Auto Online</div>
+                    <div class="text2">Drug Wars</div>
+                </div>
+                <a href="./videos/drug.html" target="_blank">马上观看</a>
+            </div>
+        </div>
+    </div>
+
+    .slideshow-area {
+    display: flex;
+}
+.slideshow-area-right {
+    width: calc(100vw - 1000px);
+    height: 600px;
+    background-color: black;
+}
+.slideshow-area-right div {
+    display: inline-block;
+}
+.slideshow-area-right .explain {
+    height: 120px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.slideshow-area-right .explain .text {
+    display: inline-block;
+    font-weight: bold;
+    cursor: pointer;
+}
+.slideshow-area-right .explain .text .text1 {
+    font-size: 18px;
+    margin: 0 20px;
+}
+.slideshow-area-right .explain .text .text2 {
+    font-size: 30px;
+}
+.slideshow-area-right .explain a {
+    font-size: 20px;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition:  all 0.2s linear;
+    font-weight: bold;
+    display: inline-block;
+}
+.slideshow-area-right .explain a:hover {
+    color: black;
+    background-color: rgb(255,176,1);
+    border: none;
+}
+.slideshow-area-right .explain3 .text .text2 {
+    font-size: 16px;
+}

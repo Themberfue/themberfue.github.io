@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Themberfue</title>
+    <link rel="icon" href="./images/rem.ico">
+    <link rel="stylesheet" href="./CSS/index.css">
+    
+</head>
+<body>
+    <header class="head-self">
+        <a href="./个人博客/index.html" target="_blank">CLICK TO VISIT MY WEBSITE</a>
+    </header>
+    <header class="head-self-end">
+        本网站旨在介绍
+        <a href="https://www.rockstargames.com/" target="_blank">ROCKSTAR GAMES</a>
+    </header>
+    <header class="top-bar">
+        <div class="logo"></div>
+        <div class="top-information">
+            <div class="information history" data-target="history-content"><a href="#">历史与创立</a></div>
+            <div class="information game" data-target="game-content"><a href="#">知名游戏</a></div>
+            <div class="information affect" data-target="affect-content"><a href="#">创新与影响</a></div>
+            <div class="information critical" data-target="critical-content"><a href="#">争议与批评</a></div>
+            <div class="information culture" data-target="culture-content"><a href="#">文化影响</a></div>
+            <div class="information future" data-target="future-content"><a href="#">未来展望</a></div>
+        </div>
+        <div class="self">
+            <div class="logo-page">
+                <a href="./个人博客/login.html" target="_blank">登录</a>
+            </div>
+            <div class="search" data-target="search-content"></div>
+            <div class="picture"></div>
+        </div>
+    </header>
+    <div class="slideshow-area">
+        <div id="history-content" class="tab-content"></div>
+        <div id="game-content" class="tab-content">
+            <div class="top">精选游戏</div>
+            <div class="bottom">
+                <div class="game GTA5"></div>
+                <div class="game GTAOnline"></div> 
+                <div class="game RedDeadRedemption2"></div>
+                <div class="game RedReadOnline"></div>
+                <div class="game GTATrilogy"></div>
+            </div>
+        </div>
+        <div id="affect-content" class="tab-content"></div>
+        <div id="critical-content" class="tab-content"></div>
+        <div id="culture-content" class="tab-content"></div>
+        <div id="future-content" class="tab-content"></div>
+        <div id="search-content" class="tab-content"></div>
+        <div class="container">
+        <div class="slider">
+            <div class="slides-container">
+                <img src="./images/slideshow1.webp" class="slide">
+                <img src="./images/slideshow2.webp" class="slide">
+                <img src="./images/slideshow3.webp" class="slide">  
+                <img src="./images/slideshow4.webp" class="slide">  
+                <img src="./images/slideshow5.webp" class="slide">  
+            </div>
+        </div>
+        <div class="description">
+            <div class="text active-text">
+                <div class="explain">
+                    <div class="explain1">Grand Theft Auto VI</div> 
+                    <div class="explain2">Trailer 1</div>
+                </div>
+                <a href="./videos/GTA6.html" target="_blank">马上观看</a>
+            </div>
+            <div class="text">
+                <div class="explain">
+                    <div class="explain1">Grand Theft Auto Online</div>
+                    <div class="explain2">The Chop Shop</div>
+                </div>
+                <a href="./videos/The Chop Shop.html" target="_blank">马上观看</a>
+            </div>
+            <div class="text">
+                <div class="explain">
+                    <div class="explain1">Grand Theft Auto Online</div>
+                    <div class="explain2">《圣安地列斯雇佣兵》现已推出</div>
+                </div>
+                <a href="./videos/San.html" target="_blank">马上观看</a>
+            </div>
+            <div class="text">
+                <div class="explain">
+                    <div class="explain1">Grand Theft Auto Online</div>
+                    <div class="explain2">GTA在线模式迎接万圣节</div>
+                </div>
+                <a href="./videos/Holloween.html" target="_blank">马上观看</a>
+            </div>
+            <div class="text">
+                <div class="explain">
+                    <div class="explain1">Grand Theft Auto Online</div>
+                    <div class="explain2">Drug Wars</div>
+                </div>
+                <a href="./videos/drug.html" target="_blank">马上观看</a>
+            </div>
+
+            <div class="button-container">
+                <button onclick="updateSlides(0)" class="slideshow-area-button"></button>
+                <button onclick="updateSlides(1)" class="slideshow-area-button"></button>
+                <button onclick="updateSlides(2)" class="slideshow-area-button"></button>
+                <button onclick="updateSlides(3)" class="slideshow-area-button"></button>
+                <button onclick="updateSlides(4)" class="slideshow-area-button"></button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript" src="./JS/index.js"></script>
+</body>
+</html>
