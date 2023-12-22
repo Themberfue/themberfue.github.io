@@ -361,9 +361,11 @@ input {
 }
 .main-containter {
     background-color: rgb(11,11,11);
+    padding-bottom: 80px;
 }
 .container-two,
-.container-three {
+.container-three,
+.container-four {
     width: 100%;
     background-color: rgb(11,11,11);
 }
@@ -379,10 +381,13 @@ input {
     background-color: rgb(11,11,11);
 }
 .container-two .top-bar-two-vice {
+    display: inline-block;
     font-size: 25px;
-    padding: 0px;
+    padding: 10px;
     margin-left: 100px;
     color: rgb(255,176,1);
+    border-bottom: 4px solid rgb(255,176,1);
+    border-radius: 5px;
 }
 .container-two .introduce {
     width: 1404px;
@@ -432,14 +437,19 @@ input {
     opacity: 0.8;
 }
 .container-three .top-bar-three-vice {
+    display: inline-block;
     margin-top: 50px;
     margin-bottom: 50px;
     font-size: 25px;
-    padding: 0px;
+    padding: 10px;
     margin-left: 100px;
     color: rgb(205,6,21);
     font-weight: bold;
+    cursor: pointer;
+    border-bottom: 4px solid rgb(205,6,21);
+    border-radius: 5px;
 }
+
 .container-three .introduce {
     width: 1404px;
     height: 477px;
@@ -478,4 +488,249 @@ input {
 }
 .container-three .introduce:hover .text {
     opacity: 0.9;
+}
+.container-four .top-bar-four-vice {
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 100px;
+    color: rgb(242,171,79);
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 4px solid rgb(242,171,79);
+    border-radius: 5px;
+}
+.container-four .introduce {
+    width: 1404px;
+    height: 620px;
+    padding: 0 70px;
+    position: relative;
+}
+.container-four .introduce .picture {
+    width: 1544px;
+    height: 620px;
+    background-image: url('../images/MP系列/Max Payne Series.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.container-four .introduce .text {
+    display: inline-block;
+    width: 1544px;
+    height: 620px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    background-color: black;
+    color: rgb(242,171,79);
+    transition: all 0.5s linear;
+    font-size: 42px;
+    text-indent: 37px;
+    font-weight: bold;
+}
+.container-four .introduce .text .paragragh1,
+.container-three .introduce .text .paragragh2,
+.container-three .introduce .text .paragragh3 {
+    padding: 20px;
+}
+.container-four .introduce:hover .text {
+    opacity: 0.7;
+}
+.footer {
+    width: 100%;
+    height: 900px;
+}
+.footer .top-footer {
+    margin: 100px;
+    display: flex;
+}
+.footer .top-footer .picture {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/Rockstar-Games-logo.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.footer .top-footer .text {
+    display: inline-block;
+    width: 1000px;
+    height: 100px;
+    line-height: 135px;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+.footer .top-footer .text a {
+    position: relative; /* 设置为相对定位，伪元素将相对于此定位 */
+    display: inline-block; /* 使链接不占满整行，以便更好的控制样式 */
+    color: rgb(255,176,1);
+    letter-spacing: 5px;
+    word-spacing: 20px;
+    padding: 20px;
+    border-bottom: 3px solid rgb(255,176,1);
+    transition: all 0.2s linear;
+    font-family: 'GTA font', sans-serif; /* 确保有后备字体 */
+    text-decoration: none; /* 去掉下划线 */
+    overflow: hidden; /* 确保伪元素不会溢出链接范围 */
+    padding: 0px 15px; /* 减少内边距 */
+    margin: 0; /* 减少外边距，根据需要调整 */
+}
+
+.footer .top-footer .text a::before {
+    content: '';
+    position: absolute;
+    z-index: -1; /* 确保伪元素在文字之下 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 100%; /* 从下方开始 */
+    background-color: rgb(255,176,1);
+    border-radius: 30px;
+    transition: top 0.3s linear; /* 平滑过渡效果 */
+}
+
+.footer .top-footer .text a:hover::before {
+    top: 0; /* 悬浮时背景扩散到整个链接 */
+}
+
+.footer .top-footer .text a:hover {
+    color: black; /* 文字颜色变化 */
+    border: none; /* 去掉边框 */
+}
+
+.footer .middle-footer {
+    margin: 0px 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    bottom: 117px;
+}
+.footer .middle-footer .picture {
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/rem.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.footer .middle-footer .text {
+    display: inline-block;
+    /* width: 1000px; */
+    height: 150px;
+    line-height: 135px;
+    font-size: 50px;
+    font-weight: bold;
+    margin-right: 70px;
+}
+.footer .middle-footer .text a {
+    position: relative;
+    display: inline-block;
+    color: rgb(0,172,229);
+    letter-spacing: 5px;
+    word-spacing: 20px;
+    padding: 20px;
+    border-bottom: 3px solid rgb(0,172,229);
+    transition: all 0.2s linear;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 0px 15px;
+    margin: 0;
+}
+
+.footer .middle-footer .text a::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 100%;
+    background-color: rgb(0,172,229);
+    border-radius: 30px;
+    transition: top 0.3s linear;
+}
+
+.footer .middle-footer .text a:hover::before {
+    top: 0;
+}
+
+.footer .middle-footer .text a:hover {
+    color: white;
+    border: none;
+}
+.footer .line {
+    margin: 0 100px;
+    border-bottom: 3px solid rgb(255,176,1);
+    margin-bottom: 50px;
+
+}
+.footer .bottom-footer {
+    margin: 0 100px;
+    display: flex;
+    margin-bottom: 90px;
+}
+.footer .bottom-footer .contact {
+    margin-right: 50px;
+}
+.footer .bottom-footer a {
+    font-size: 30px;
+    transition: all 0.2s linear;
+}
+.footer .bottom-footer a img {
+    width: 30px;
+    height: 30px;
+}
+.footer .bottom-footer a:hover {
+    color: rgb(255,176,1);
+}
+.footer .ture-footer {
+    margin: 0 100px;
+    /* height: 100px; */
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+.footer .ture-footer .text {
+    display: inline-block;
+    color: rgb(147,147,147);
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+.footer .ture-footer .text:hover {
+    color: rgb(255,176,1);
+}
+.footer .absolute-footer {
+    margin: 0 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .absolute-footer .information {
+    font-size: 16px;
+    color: white;
+    display: flex;
+    font-weight: bold;
+}
+.footer .absolute-footer .information .city {
+    margin-right: 20px;
+}
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 25px;
 }

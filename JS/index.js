@@ -273,34 +273,74 @@ document.addEventListener('DOMContentLoaded', function() {
     p.style.transition = 'transform 0.8s ease-in-out, opacity 0.8s ease-in-out';
     });
 
-// 获取.container-three中的.introduce和所有.paragragh元素
-const introduceElementContainerThree = document.querySelector('.container-three .introduce');
-const paragraphsContainerThree = introduceElementContainerThree.querySelectorAll('.paragragh1, .paragragh2, .paragragh3, .paragragh4, .paragragh5');
+    // 获取.container-three中的.introduce和所有.paragragh元素
+    const introduceElementContainerThree = document.querySelector('.container-three .introduce');
+    const paragraphsContainerThree = introduceElementContainerThree.querySelectorAll('.paragragh1, .paragragh2, .paragragh3, .paragragh4, .paragragh5');
 
-// 应用初始样式到每个段落
-paragraphsContainerThree.forEach(p => Object.assign(p.style, initialStyles));
+    // 应用初始样式到每个段落
+    paragraphsContainerThree.forEach(p => Object.assign(p.style, initialStyles));
 
-// 监听滚动事件
-window.addEventListener('scroll', () => {
-  // 确定.introduce的位置
-  const introducePositionContainerThree = introduceElementContainerThree.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
+    // 监听滚动事件
+    window.addEventListener('scroll', () => {
+    // 确定.introduce的位置
+    const introducePositionContainerThree = introduceElementContainerThree.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-  // 当滚动到.introduce位置时
-  if (introducePositionContainerThree <= windowHeight * 2 / 3) {
-    paragraphsContainerThree.forEach((p, index) => {
-      setTimeout(() => {
-        p.style.transform = 'translateY(0)';
-        p.style.opacity = '1';
-      }, index * 200);  // 递增延迟时间，使段落依次出现
+    // 当滚动到.introduce位置时
+    if (introducePositionContainerThree <= windowHeight * 2 / 3) {
+        paragraphsContainerThree.forEach((p, index) => {
+        setTimeout(() => {
+            p.style.transform = 'translateY(0)';
+            p.style.opacity = '1';
+        }, index * 200);  // 递增延迟时间，使段落依次出现
+        });
+    } else if (introducePositionContainerThree > windowHeight) {
+        // 当滚动超过.introduce区域一定范围时，重置段落的样式
+        paragraphsContainerThree.forEach(p => {
+        Object.assign(p.style, initialStyles);
+        });
+    }
     });
-  } else if (introducePositionContainerThree > windowHeight) {
-    // 当滚动超过.introduce区域一定范围时，重置段落的样式
-    paragraphsContainerThree.forEach(p => {
-      Object.assign(p.style, initialStyles);
-    });
-  }
+
+        // 当窗口滚动时执行
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var backToTop = document.getElementById("backToTop");
+
+        // 当用户滑动页面超过20px时显示按钮
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTop.style.display = "block";
+        } else {
+            backToTop.style.display = "none";
+        }
+    }
+
+    // 当用户点击按钮时，平滑滚动到页面顶部
+    document.getElementById('backToTop').onclick = function() {
+        // 对于所有浏览器
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // 指定平滑滚动
+        });
+    };
+    
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // 选择第一个图片元素并为其添加点击事件
+    var picture1 = document.getElementById('picture1');
+    picture1.addEventListener('click', function() {
+        // 在新标签页中打开指定的URL
+        window.open('https://www.rockstargames.com/', '_blank');
+    });
 
+    // 选择第二个图片元素并为其添加点击事件
+    var picture2 = document.getElementById('picture2');
+    picture2.addEventListener('click', function() {
+        // 在新标签页中打开指定的URL
+        window.open('https://themberfue.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html', '_blank');
+    });
 });
