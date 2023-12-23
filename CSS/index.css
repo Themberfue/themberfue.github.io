@@ -390,13 +390,14 @@ input {
     border-radius: 5px;
 }
 .container-two .introduce {
-    width: 1404px;
+    width: 90vw;
     height: 950px;
     padding: 0 70px;
     position: relative;
+    margin: 0 auto;
 }
 .container-two .introduce .picture {
-    width: 1544px;
+    width: 90vw;
     height: 950px;
     background-image: url('../images/GTA系列/《Grand Theft Auto》Series.webp');
     background-size: cover;
@@ -407,7 +408,7 @@ input {
 }
 .container-two .introduce .text {
     display: inline-block;
-    width: 1544px;
+    width: 90vw;
     height: 950px;
     opacity: 0;
     position: absolute;
@@ -451,16 +452,17 @@ input {
 }
 
 .container-three .introduce {
-    width: 1404px;
+    margin: 0 auto;
+    width: 90vw;
     height: 477px;
     padding: 0 70px;
     position: relative;
 }
 .container-three .introduce .picture {
-    width: 1544px;
+    width: 90vw;
     height: 477px;
     background-image: url('../images/RDR系列/RDR Series.webp');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-origin: content-box;
     cursor: pointer;
@@ -468,7 +470,7 @@ input {
 }
 .container-three .introduce .text {
     display: inline-block;
-    width: 1544px;
+    width: 90vw;
     height: 477px;
     opacity: 0;
     position: absolute;
@@ -489,6 +491,13 @@ input {
 .container-three .introduce:hover .text {
     opacity: 0.9;
 }
+.container-four .introduce {
+    margin: 0 auto;
+    width: 90vw;
+    height: 35vw;
+    padding: 0 70px;
+    position: relative;
+}
 .container-four .top-bar-four-vice {
     display: inline-block;
     margin-top: 50px;
@@ -502,14 +511,8 @@ input {
     border-bottom: 4px solid rgb(242,171,79);
     border-radius: 5px;
 }
-.container-four .introduce {
-    width: 1404px;
-    height: 620px;
-    padding: 0 70px;
-    position: relative;
-}
 .container-four .introduce .picture {
-    width: 1544px;
+    width: 90vw;
     height: 620px;
     background-image: url('../images/MP系列/Max Payne Series.webp');
     background-size: cover;
@@ -520,7 +523,7 @@ input {
 }
 .container-four .introduce .text {
     display: inline-block;
-    width: 1544px;
+    width: 90vw;
     height: 620px;
     opacity: 0;
     position: absolute;
@@ -734,3 +737,4 @@ input {
     background-color: white;
     border-radius: 25px;
 }
+
