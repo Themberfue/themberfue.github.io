@@ -736,4 +736,8 @@ input {
     background-color: white;
     border-radius: 25px;
 }
-
+@media only screen and (max-width: 1550px) {
+    .button-container .slideshow-area-button {
+        width: 50px;
+    }
+}
