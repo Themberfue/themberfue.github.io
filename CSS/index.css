@@ -727,6 +727,9 @@ input {
 .footer .absolute-footer .information .city {
     margin-right: 20px;
 }
+.all-information {
+    display: none;
+}
 #backToTop {
     position: fixed;
     bottom: 30px;
@@ -735,9 +738,106 @@ input {
     cursor: pointer;
     background-color: white;
     border-radius: 25px;
+    transition: all 0.2s linear;
+}
+#backToTop:hover {
+    background-color: rgb(227,229,231);
+}
+.close-button {
+    display: none;
 }
 @media only screen and (max-width: 1550px) {
     .button-container .slideshow-area-button {
         width: 50px;
+    }   
+}
+@media only screen and (max-width: 768px) {
+    .top-bar .top-information {
+        display: none;
     }
+    .footer .middle-footer .text a,
+    .footer .top-footer .text a {
+        letter-spacing: 0px;
+        word-spacing: 0px;
+    }
+    .footer .top-footer .text {
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .footer .middle-footer .text {
+        line-height: 100px;
+        font-size: 20px;
+    }
+    .footer .middle-footer .picture {
+        width: 100px;
+        height: 100px;
+    }
+    .container-four .introduce .text,
+    .container-three .introduce .text,
+    .container-two .introduce .text {
+        overflow: hidden;
+    }
+    .active-text .explain .explain1 {
+        font-size: 9px;
+    }
+    .active-text .explain .explain2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .active-text .explain .special {
+        font-size: 19px;
+    }
+    .active-text a {
+        font-size: 12px;
+        width: 94px;
+        height: 36px;
+        line-height: 36px;
+    }
+    .top-bar {
+        /* 保持原样，但确保z-index合适 */
+        z-index: 100; /* 低于 .top-information */
+    }
+    .top-bar .top-information {
+        /* 确保它可以覆盖整个视口 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; /* 宽度为视口宽度 */
+        height: 100vh; /* 高度为视口高度 */
+        background-color: black; /* 设置背景为黑色 */
+        z-index: 1000; /* 确保其在顶层 */
+        flex-direction: column; /* 子元素垂直排列 */
+        justify-content: flex-start; /* 从顶部开始排列 */
+        align-items: center; /* 水平居中对齐 */
+    }
+    .top-bar .top-information .close-button {
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        cursor: pointer;
+        color: white;
+        background-color: red; /* 可以根据你的设计进行调整 */
+        border-radius: 5px;
+    }
+
+    .information {
+        text-align: center;
+        /* 每个导航链接的样式 */
+        padding: 10px;
+        border-bottom: 1px solid #ccc; /* 视觉分隔符 */
+    }
+    .all-information {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        background-color: black;
+        border-radius: 50%;
+    }
+    .tab-content {
+        position: relative; /* 必须设置定位属性才能使 z-index 生效 */
+        z-index: 9999999; /* 或其他适当的值 */
+}
+
 }

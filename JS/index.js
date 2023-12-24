@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSlides(nextIndex);
     }
 
-    var autoSlideTimer = setInterval(nextSlide, 5000);
+    // var autoSlideTimer = setInterval(nextSlide, 5000);
 
     updateSlides(0);
 
@@ -343,4 +343,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // 在新标签页中打开指定的URL
         window.open('https://themberfue.cn/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html', '_blank');
     });
+});
+
+document.querySelector('.all-information').addEventListener('click', function() {
+    // 切换 .top-information 部分的显示状态
+    var topInfo = document.querySelector('.top-information');
+    if (topInfo.style.display === "none") {
+        topInfo.style.display = "block";
+    } else {
+        topInfo.style.display = "none";
+    }
+});
+document.querySelector('.top-bar .top-information .close-button').addEventListener('click', function() {
+    var topInfo = document.querySelector('.top-bar .top-information');
+    topInfo.style.display = 'none'; // 隐藏 .top-information
 });
