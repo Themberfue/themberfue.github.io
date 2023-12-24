@@ -743,7 +743,7 @@ input {
 #backToTop:hover {
     background-color: rgb(227,229,231);
 }
-.close-button {
+.all-information {
     display: none;
 }
 @media only screen and (max-width: 1550px) {
