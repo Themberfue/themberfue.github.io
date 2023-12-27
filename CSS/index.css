@@ -6,7 +6,7 @@ body {
 }
 a,a:visited {
     text-decoration: none;
-    color: white;
+    color: rgb(232,232,232);
 }
 ul {
     list-style: none;
@@ -25,9 +25,30 @@ input {
     outline: none;
     box-shadow: none;
 }
+@keyframes start-move {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@font-face {
+    font-family: GTA font;
+    src: url('../字体/pricedown-bl-1.ttf');
+}
+@font-face {
+    font-family: RDR font;
+    src: url('../字体/chinese rocks rg.ttf');
+}
+@font-face {
+    font-family: TEXT font;
+    src: url('../字体/AlibabaHealthFont2.0CN-45R.ttf');
+}
 .head-self,.top-bar,.slideshow-area {
     animation: start-move 0.3s ease-in-out 1;
-
 }
 .head-self {
     height: 70px;
@@ -45,7 +66,7 @@ input {
     transition: all 0.2s linear;
 }
 .head-self a:hover {
-    color: rgb(255,176,1);
+    color: rgba(0, 191, 255, 0.868);
     font-size: 35px;
 }
 .head-self-end {
@@ -151,7 +172,6 @@ input {
 }
 .top-bar .top-information .information a:hover {
     color: rgb(255,176,1);
-    font-size: 20px;
 }
 .tab-content {
     display: none;
@@ -166,6 +186,55 @@ input {
 }
 .tab-content.active {
     display: block;
+}
+#history-content {
+    width: 100%;
+    height: 3900px;
+}
+#history-content .information {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/History-back.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+}
+#history-content .information .left-information,
+#history-content .information .right-information {
+    width: 350px;
+    color: white;
+    height: 500px;
+    padding: 100px;
+    font-size: 32px;
+    text-indent: 30px;
+    font-family: TEXT font;
+    font-weight: bold;
+}
+#history-content .information .middle-information a {
+    font-size: 20px;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 40px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition:  all 0.2s linear;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 600px;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+                        2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+#history-content .information .middle-information a:hover {
+    background-color: rgb(255,176,1);
+    color: black;
+    border: none;
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+                        4px 4px 25px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
 }
 #game-content {
     width: 100%;
@@ -262,16 +331,6 @@ input {
 #search-content .search-content-right .prompt:nth-child(4) {
     margin-right: 30px;
 }
-@keyframes start-move {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}
 .slideshow-area {
     display: flex;
 }
@@ -351,15 +410,7 @@ input {
 .button-container .slideshow-area-button.active {
     background-color: white; /* 点击后的背景色为白色 */
 }
-@font-face {
-    font-family: GTA font;
-    src: url('../字体/pricedown-bl-1.ttf');
-}
-@font-face {
-    font-family: RDR font;
-    src: url('../字体/chinese rocks rg.ttf');
-}
-.main-containter {
+.main-container {
     background-color: rgb(11,11,11);
     padding-bottom: 80px;
 }
@@ -730,22 +781,42 @@ input {
 .all-information {
     display: none;
 }
-#backToTop {
+#refresh {
+    width: 50px;
+    height: 50px;
     position: fixed;
+    right: 10px;
     bottom: 30px;
-    right: 30px;
-    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    z-index: 1000;
+}
+#backToTop {
+    width: 50px;
+    height: 56px;
+    position: fixed;
+    bottom: 90px;
+    right: 10px;
     cursor: pointer;
     background-color: white;
-    border-radius: 25px;
+    text-align: center;
+    border-radius: 10px;
     transition: all 0.2s linear;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 1000;
 }
-#backToTop:hover {
+
+#backToTop:hover,
+#refresh:hover {
     background-color: rgb(227,229,231);
 }
-.all-information {
+/* .all-information {
     display: none;
-}
+} */
 @media only screen and (max-width: 1550px) {
     .button-container .slideshow-area-button {
         width: 50px;

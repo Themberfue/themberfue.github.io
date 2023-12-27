@@ -19,22 +19,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    function hasSpecialEffect(element) {
+    return element.classList.contains('special-effect');
+}
+
     function activateTab(tab) {
-        var targetId = tab.getAttribute('data-target');
-        var targetContent = document.getElementById(targetId);
+    var targetId = tab.getAttribute('data-target');
+    var targetContent = document.getElementById(targetId);
 
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
 
-        contents.forEach(function(content) {
-            if(content !== targetContent) {
-                fadeOut(content);
+    contents.forEach(function(content) {
+        if(content !== targetContent) {
+            if(hasSpecialEffect(content)) {
+                fadeOut(content); // 对有特殊效果的元素使用fadeOut
+            } else {
+                content.style.display = 'none'; // 对普通元素直接隐藏
             }
-        });
+        }
+    });
 
-        fadeIn(targetContent);
+    if(hasSpecialEffect(targetContent)) {
+        fadeIn(targetContent); // 对有特殊效果的元素使用fadeIn
+    } else {
+        targetContent.style.display = targetId === 'search-content' ? 'flex' : 'block';
+    }
 
-         if (targetId === 'search-content') {
+    if (targetId === 'search-content') {
             targetContent.style.display = 'flex';
             targetContent.style.alignItems = 'center';
             targetContent.style.justifyContent = 'space-between';
@@ -42,10 +54,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // 确保其他内容不使用flex布局
             targetContent.style.display = 'block';
         }
-    }
+
+}
+
 });
 
 function fadeIn(element) {
+    if (!element.classList.contains('special-effect')) return;
+
     element.style.opacity = 0;
     element.style.transform = 'translateY(10px)';
     element.style.display = 'block';
@@ -67,6 +83,7 @@ function fadeIn(element) {
 }
 
 function fadeOut(element) {
+    if (!element.classList.contains('special-effect')) return;
     var opacity = 1;
     element.style.transform = 'translateY(0)';
     var last = +new Date();
@@ -89,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var gta5Div = document.querySelector('.game.GTA5');
     if (gta5Div) {
         gta5Div.addEventListener('click', function() {
-            window.open('https://baike.baidu.com/item/rockstar%20games/3544461', '_blank');
+            window.open('https://www.rockstargames.com/zh/gta-v', '_blank');
         });
     }
 
@@ -97,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var gtaonlineDiv = document.querySelector('.game.GTAOnline');
     if (gtaonlineDiv) {
         gtaonlineDiv.addEventListener('click', function() {
-            window.open('https://baike.baidu.com/item/rockstar%20games/3544461', '_blank');
+            window.open('https://www.rockstargames.com/zh/gta-online', '_blank');
         });
     }
 
@@ -105,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var RedDeadRedemption2Div = document.querySelector('.game.RedDeadRedemption2');
     if (RedDeadRedemption2Div) {
         RedDeadRedemption2Div.addEventListener('click', function() {
-            window.open('https://baike.baidu.com/item/rockstar%20games/3544461', '_blank');
+            window.open('https://www.rockstargames.com/zh/reddeadredemption2', '_blank');
         });
     }
 
@@ -113,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var RedReadOnlineDiv = document.querySelector('.game.RedReadOnline');
     if (RedReadOnlineDiv) {
         RedReadOnlineDiv.addEventListener('click', function() {
-            window.open('https://baike.baidu.com/item/rockstar%20games/3544461', '_blank');
+            window.open('https://www.rockstargames.com/zh/reddeadonline', '_blank');
         });
     }
 
@@ -121,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var GTATrilogyDiv = document.querySelector('.game.GTATrilogy');
     if (GTATrilogyDiv) {
         GTATrilogyDiv.addEventListener('click', function() {
-            window.open('https://themberfue.cn/login.html', '_blank');
+            window.open('https://www.rockstargames.com/zh/GTATrilogy', '_blank');
         });
     }
 
@@ -178,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
         updateSlides(nextIndex);
     }
 
-    // var autoSlideTimer = setInterval(nextSlide, 5000);
+    var autoSlideTimer = setInterval(nextSlide, 5000);
 
     updateSlides(0);
 
