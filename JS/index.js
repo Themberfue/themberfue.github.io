@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var pictureDiv = document.querySelector('.picture');
     if (pictureDiv) {
         pictureDiv.addEventListener('click', function() {
-            window.open('https://socialclub.rockstargames.com/member/Themberfue?id=172253076', '_blank');
+            window.open('https://themberfue.cn/Sencondary%20web%20page/RockStar-Games-Social%20club/index.html', '_blank');
         });
     }
 });
