@@ -43,6 +43,16 @@ input {
         background-position: -100%;
     }
 }
+@keyframes text-move {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 0.8;
+        transform: translateY(-280px);
+    }
+}
 @font-face {
     font-family: GTA font;
     src: url('../字体/pricedown-bl-1.ttf');
@@ -271,7 +281,7 @@ input {
     margin-top: 10px;
 }
 #game-content .game {
-    width: 288px;
+    width: 18vw;
     height: 400px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -294,10 +304,101 @@ input {
     background-image: url('../images/GTATrilogy.webp');
     margin-right: 50px;
 }
+#affect-content {
+    padding: 0 5px;
+    width: 98vw;
+    height: 3900px;
+}
+#affect-content .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+#affect-content .container img {
+    width: 18vw;
+    height: 22vw;
+    cursor: pointer;
+}
+#critical-content {
+    width: 98vw;
+    height: 3900px;
+}
+#critical-content .container {
+    width: 98vw;
+    height: 3900px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+#critical-content .container .information {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#critical-content .container .information img {
+    width: 500px;
+    height: 500px;
+}
+#critical-content .container .information .text1,
+#critical-content .container .information .text2 {
+    color: #fff;
+    padding: 10px;
+    font-size: 60px;
+    font-weight: bold;
+    transition: all 0.2s linear;
+    background-color: black;
+    border-radius: 10px;
+    opacity: 0;
+}
+#critical-content .container .information:hover .text1,
+#critical-content .container .information:hover .text2{
+    animation: text-move 0.3s linear 1;
+    animation-fill-mode: forwards;
+}
 #search-content {
     width: 100%;
     height: 120px;
     background-color: rgb(38,38,38);
+}
+#culture-content {
+    width: 98vw;
+    height: 3900px;
+    background-image: url('../images/rockstar-games-logo-2.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#culture-content .container {
+    width: 98vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#culture-content .container a {
+    width: 1000px;
+    height: 400px;
+    line-height: 130px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+                2px 2px 15px rgba(0, 0, 0, 0.5);
+    transition: all linear 0.2s;
+}
+#culture-content .container a:hover {
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+                4px 4px 25px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(7px);
+    text-decoration: underline;
 }
 #search-content .search-content-left .search-ico {
     background-image: url('../images/search-icon.webp');
