@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>RockStar Games Social club</title>
+    <link rel="shortcut icon" href="../RockStar-Games-Login/img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            height: 100vh;
+            background-image: url('../RockStar-Games-Login/img/Login-page-background.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .left-container {
+            width: 500px;
+            height: 800px;
+            margin-right: 20px;
+        }
+
+        .left-container .top-content {
+            width: 500px;
+            height: 300px;
+            background-image: url('./img/logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .left-container .bottom-content a {
+            display: inline-block;
+            text-decoration: none;
+            font-size: 80px;
+            width: 500px;
+            height: 300px;
+            line-height: 300px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+            box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+                        2px 2px 15px rgba(0, 0, 0, 0.5);
+            transition: all linear 0.2s;
+        }
+        .left-container .bottom-content a:hover {
+            box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+                4px 4px 25px rgba(0, 0, 0, 0.9);
+                background-color: rgb(255,176,1);
+            text-decoration: underline;
+            color: black;
+        }
+        .right-container img{
+            width: 670px;
+            height: 904px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="left-container">
+        <div class="top-content">
+            
+        </div>
+        <div class="bottom-content">
+            <a href="https://socialclub.rockstargames.com/">Click Here</a>
+        </div>
+    </div>
+    <div class="right-container">
+        <img src="./img/char.png" alt="">
+    </div>
+</body>
+</html>
