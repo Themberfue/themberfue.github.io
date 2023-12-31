@@ -62,8 +62,20 @@ input {
     src: url('../字体/chinese rocks rg.ttf');
 }
 @font-face {
-    font-family: TEXT font;
+    font-family: TEXT;
     src: url('../字体/AlibabaHealthFont2.0CN-45R.ttf');
+}
+@font-face {
+    font-family: TEXT1;
+    src: url('../字体/LXGWFasmartGothic.ttf');
+}
+@font-face {
+    font-family: TEXT2;
+    src: url('../字体/字魂扁桃体.ttf');
+}
+@font-face {
+    font-family: TEXT3;
+    src: url('../字体/庞门正道标题体免费版.ttf');
 }
 .head-self,.top-bar,.slideshow-area {
     animation: start-move 0.3s ease-in-out 1;
@@ -224,6 +236,12 @@ input {
     background-repeat: no-repeat;
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+#history-content .information .nothing {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
 #history-content .information .left-information,
 #history-content .information .right-information {
@@ -233,7 +251,7 @@ input {
     padding: 100px;
     font-size: 32px;
     text-indent: 30px;
-    font-family: TEXT font;
+    font-family: TEXT;
     font-weight: bold;
 }
 #history-content .information .middle-information a {
@@ -398,6 +416,43 @@ input {
     box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
                 4px 4px 25px rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(7px);
+    text-decoration: underline;
+}
+#future-content {
+    background-color: rgb(18,18,18);
+    height: 3900px;
+}
+#future-content .container {
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#future-content .container .top-information {
+    width: 90vw;
+    height: 8vw;
+    line-height: 8vw;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: TEXT1;
+}
+#future-content .container .middle-information ul {
+    width: 90vw;
+}
+#future-content .container .middle-information ul li:nth-child(1) h3,
+#future-content .container .middle-information ul li:nth-child(1) p,
+#future-content .container .middle-information ul li:nth-child(3) h3,
+#future-content .container .middle-information ul li:nth-child(3) p  {
+    font-family: TEXT2;
+}
+#future-content .container .middle-information ul li:nth-child(5) h3,
+#future-content .container .middle-information ul li:nth-child(5) p,
+#future-content .container .middle-information ul li:nth-child(7) h3,
+#future-content .container .middle-information ul li:nth-child(7) p {
+    font-family: TEXT3;
+}
+#future-content .container .middle-information ul li a {
     text-decoration: underline;
 }
 #search-content .search-content-left .search-ico {
@@ -1005,7 +1060,6 @@ input {
         background-color: red; /* 可以根据你的设计进行调整 */
         border-radius: 5px;
     }
-
     .information {
         text-align: center;
         /* 每个导航链接的样式 */
@@ -1021,7 +1075,6 @@ input {
     }
     .tab-content {
         position: relative; /* 必须设置定位属性才能使 z-index 生效 */
-        z-index: 9999999; /* 或其他适当的值 */
-}
-
+        z-index: 1000; /* 或其他适当的值 */
+    }
 }
