@@ -390,6 +390,18 @@ GTA系列是一个多面的现象，它的影响远远超出了游戏本身。�
         <div class="top">顶部</div>
     </div>
 
+    <button onclick="goBack()">返回主网页</button>
+
     <script type="text/javascript" src="./JS/index.js"></script>
+
+    <script>
+        window.onload = function() {
+            // 打开一个新的网页
+            window.open('https://themberfue.cn/%E7%83%9F%E8%8A%B1/index.html');
+        };
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>

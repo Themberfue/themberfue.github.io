@@ -30,6 +30,22 @@
             background-size: cover;
             background-position: center;
         }
+        .left-footer .information{
+            display: flex;
+            flex-direction: column;
+            z-index: 999999;
+            position: fixed;
+            bottom: 15px;
+            left: 15px;
+        }
+        .left-footer .information a {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+        }
     </style>
     <script src="./js/jquery.min.js" type="text/javascript"></script>
 </head>
@@ -56,6 +72,12 @@
         </div>
     </div>
 
+    <div class="left-footer">
+        <div class="information">
+            <a href="../index.html"><img src="../Sencondary web page/RockStar-Games-Login/img/主页.svg" alt=""></a>
+            <a href="../个人博客/index.html" target="_blank"><img src="../Sencondary web page/RockStar-Games-Login/img/我的.svg" alt=""></a>
+        </div>
+    </div>
     <!-- partial -->
     <script type="text/javascript" src="./js/common.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
