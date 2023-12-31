@@ -1,0 +1,1080 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+a,a:visited {
+    text-decoration: none;
+    color: rgb(232,232,232);
+}
+ul {
+    list-style: none;
+}
+button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+input {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+}
+@keyframes start-move {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+@keyframes shine {
+    0% {
+        background-position: 30%;
+    }
+    100% {
+        background-position: -100%;
+    }
+}
+@keyframes text-move {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 0.8;
+        transform: translateY(-280px);
+    }
+}
+@font-face {
+    font-family: GTA font;
+    src: url('../字体/pricedown-bl-1.ttf');
+}
+@font-face {
+    font-family: RDR font;
+    src: url('../字体/chinese rocks rg.ttf');
+}
+@font-face {
+    font-family: TEXT;
+    src: url('../字体/AlibabaHealthFont2.0CN-45R.ttf');
+}
+@font-face {
+    font-family: TEXT1;
+    src: url('../字体/LXGWFasmartGothic.ttf');
+}
+@font-face {
+    font-family: TEXT2;
+    src: url('../字体/字魂扁桃体.ttf');
+}
+@font-face {
+    font-family: TEXT3;
+    src: url('../字体/庞门正道标题体免费版.ttf');
+}
+.head-self,.top-bar,.slideshow-area {
+    animation: start-move 0.3s ease-in-out 1;
+}
+.head-self {
+    height: 70px;
+    background-image: url('../images/top-images.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 70px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.head-self a {
+    letter-spacing: 10px;
+    word-spacing: 20px;
+    transition: all 0.2s linear;
+
+    color: #fff;
+    background: linear-gradient(to right, rgb(0, 191, 255), 0, #fff 10%, rgb(0, 191, 255) 20%);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+}
+.head-self a:hover {
+    color: rgba(0, 191, 255, 0.868);
+    font-size: 35px;
+}
+.head-self-end {
+    height: 40px;
+    background-color: rgb(255,176,1);
+    color: black;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+.head-self-end a {
+    color: black;
+}
+.top-bar {
+    height: 100px;
+    line-height: 100px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+}
+.top-bar .logo{
+    width: 35px;
+    height: 35px;
+    margin-left: 50px;
+    cursor: pointer;
+    background-image: url('../字体图标/RockStar-logo.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.top-bar .self {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.top-bar .self .picture {
+    width: 50px;
+    height: 50px;
+    background-image: url('../images/self-picture.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 50px;
+    border-radius: 50%;
+    border: 2px solid rgb(255,176,1);
+    cursor: pointer;
+}
+.top-bar .self .search {
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/search-icon.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-right: 50px;
+    cursor: pointer;
+}
+.top-bar .self .logo-page {
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+    background-image: url('../images/rockstar-yellow.webp');
+    margin-right: 50px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+.top-bar .self .logo-page a {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.top-bar .self .logo-page:hover {
+    opacity: 0.8;
+}
+.top-bar .top-information {
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.top-bar .top-information .information {
+    height: 100px;
+    margin: 0 20px;
+    box-sizing: border-box;
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.top-bar .top-information .information:hover,
+.top-bar .top-information .information.active {
+    border-bottom: 3px solid white;
+}
+.top-bar .top-information .information:nth-child(1) {
+    margin-left: 0px;
+}
+.top-bar .top-information .information:nth-child(6) {
+    margin-right: 0px;
+}
+.top-bar .top-information .information a {
+    transition: all 0.2s linear;
+}
+.top-bar .top-information .information a:hover {
+    color: rgb(255,176,1);
+}
+.tab-content {
+    display: none;
+    /* 这里可以添加更多样式，如padding, margin等 */
+    color: white;
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.tab-content.active {
+    display: block;
+}
+#history-content {
+    width: 100%;
+    height: 3900px;
+}
+#history-content .information {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/History-back.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+#history-content .information .nothing {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+#history-content .information .left-information,
+#history-content .information .right-information {
+    width: 350px;
+    color: white;
+    height: 500px;
+    padding: 100px;
+    font-size: 32px;
+    text-indent: 30px;
+    font-family: TEXT;
+    font-weight: bold;
+}
+#history-content .information .middle-information a {
+    font-size: 20px;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 40px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition:  all 0.2s linear;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 600px;
+    backdrop-filter: blur(10px);
+    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+                        2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+#history-content .information .middle-information a:hover {
+    background-color: rgb(255,176,1);
+    color: black;
+    border: none;
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+                        4px 4px 25px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+}
+#game-content {
+    width: 100%;
+    height: 550px;
+    background-color: rgb(18,18,18);
+}
+#game-content .top {
+    height: 120px;
+    line-height: 180px;
+    /* background-color: rgb(255,176,1); */
+    font-size: 40px;
+    margin-left: 50px;
+    font-weight: bold;
+}
+#game-content .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+#game-content .game {
+    width: 18vw;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+#game-content .GTA5 {
+    background-image: url('../images/GTA5.webp');
+    margin-left: 50px;
+}
+#game-content .GTAOnline {
+    background-image: url('../images/GTAOnline.webp');
+}
+#game-content .RedDeadRedemption2 {
+    background-image: url('../images/reddeadredemption2.webp');
+}
+#game-content .RedReadOnline {
+    background-image: url('../images/reddeadonline.webp');
+}
+#game-content .GTATrilogy {
+    background-image: url('../images/GTATrilogy.webp');
+    margin-right: 50px;
+}
+#affect-content {
+    padding: 0 5px;
+    width: 98vw;
+    height: 3900px;
+}
+#affect-content .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+#affect-content .container img {
+    width: 18vw;
+    height: 22vw;
+    cursor: pointer;
+}
+#critical-content {
+    width: 98vw;
+    height: 3900px;
+}
+#critical-content .container {
+    width: 98vw;
+    height: 3900px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+#critical-content .container .information {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+#critical-content .container .information img {
+    width: 500px;
+    height: 500px;
+}
+#critical-content .container .information .text1,
+#critical-content .container .information .text2 {
+    color: #fff;
+    padding: 10px;
+    font-size: 60px;
+    font-weight: bold;
+    transition: all 0.2s linear;
+    background-color: black;
+    border-radius: 10px;
+    opacity: 0;
+}
+#critical-content .container .information:hover .text1,
+#critical-content .container .information:hover .text2{
+    animation: text-move 0.3s linear 1;
+    animation-fill-mode: forwards;
+}
+#search-content {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(38,38,38);
+}
+#culture-content {
+    width: 98vw;
+    height: 3900px;
+    background-image: url('../images/rockstar-games-logo-2.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#culture-content .container {
+    width: 98vw;
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#culture-content .container a {
+    width: 1000px;
+    height: 400px;
+    line-height: 130px;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    box-shadow: inset 1px 1px 6px rgba(255, 255, 255, 0.3),
+                2px 2px 15px rgba(0, 0, 0, 0.5);
+    transition: all linear 0.2s;
+}
+#culture-content .container a:hover {
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.9),
+                4px 4px 25px rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(7px);
+    text-decoration: underline;
+}
+#future-content {
+    background-color: rgb(18,18,18);
+    height: 3900px;
+}
+#future-content .container {
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+#future-content .container .top-information {
+    width: 90vw;
+    height: 8vw;
+    line-height: 8vw;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: TEXT1;
+}
+#future-content .container .middle-information ul {
+    width: 90vw;
+}
+#future-content .container .middle-information ul li:nth-child(1) h3,
+#future-content .container .middle-information ul li:nth-child(1) p,
+#future-content .container .middle-information ul li:nth-child(3) h3,
+#future-content .container .middle-information ul li:nth-child(3) p  {
+    font-family: TEXT2;
+}
+#future-content .container .middle-information ul li:nth-child(5) h3,
+#future-content .container .middle-information ul li:nth-child(5) p,
+#future-content .container .middle-information ul li:nth-child(7) h3,
+#future-content .container .middle-information ul li:nth-child(7) p {
+    font-family: TEXT3;
+}
+#future-content .container .middle-information ul li a {
+    text-decoration: underline;
+}
+#search-content .search-content-left .search-ico {
+    background-image: url('../images/search-icon.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 30px;
+    margin-right: 10px;
+}
+#search-content .search-content-left input {
+    width: 400px;
+    vertical-align: middle;
+    height: 40px;
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(232,232,232);
+}
+#search-content .search-content-left input::placeholder {
+    font-weight: bold;
+    color: rgb(232,232,232);
+}
+#search-content .search-content-right .prompt {
+    display: inline-block;
+    margin: 0 10px;
+    width: 130px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+    border-radius: 35px;
+    cursor: pointer;
+    background-color: rgb(70,70,70);
+    transition: all 0.2s linear;
+}
+#search-content .search-content-right .prompt:hover {
+    background-color: rgb(125,125,125);
+}
+#search-content .search-content-right .prompt.clicked {
+    background-color: white;
+    color: black;
+}
+#search-content .search-content-right .prompt:nth-child(4) {
+    margin-right: 30px;
+}
+.slideshow-area {
+    display: flex;
+}
+.container {
+    display: flex;
+    width: 100vw;
+}
+.slider {
+    width: 70vw;
+    overflow: hidden; /* 隐藏溢出的部分 */
+}
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease; /* 平滑过渡效果 */
+}
+.slide {
+    min-width: 100%; /* 确保每张图片占据滑块的全部宽度 */
+}
+.description {
+    width: 470px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* 其他样式根据需要添加 */
+.text {
+    display: none;
+}
+.active-text {
+    display: block;
+    font-weight: bold;
+    margin-top: 100px;
+}
+.active-text .explain .explain1 {
+    font-size: 18px;
+    color: rgb(232,232,232);
+    margin: 0 40px;
+    margin-bottom: 20px;
+}
+.active-text .explain .explain2 {
+    font-size: 50px;
+    color: rgb(255,255,255);
+    margin: 0 40px;
+    margin-bottom: 40px;
+}
+.active-text a {
+    font-size: 20px;
+    width: 160px;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 40px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition:  all 0.2s linear;
+    font-weight: bold;
+    display: inline-block;
+}
+.active-text a:hover {
+    color: black;
+    background-color: rgb(255,176,1);
+    border: none;
+}
+.button-container {
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+.button-container .slideshow-area-button {
+    width: 80px;
+    height: 5px;
+    border-radius: 10px;
+    background-color: gray; /* 初始背景色为灰色 */
+    transition: background-color 0.3s ease; /* 过渡效果 */
+}
+.button-container .slideshow-area-button.active {
+    background-color: white; /* 点击后的背景色为白色 */
+}
+.main-container {
+    background-color: rgb(11,11,11);
+    padding-bottom: 80px;
+}
+.container-two,
+.container-three,
+.container-four {
+    width: 100%;
+    background-color: rgb(11,11,11);
+}
+.container-two .top-bar-two,
+.container-two .top-bar-two-vice {
+    color: white;
+    padding-top: 30px;
+    padding-left: 70px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    cursor: pointer;
+    background-color: rgb(11,11,11);
+}
+.container-two .top-bar-two-vice {
+    display: inline-block;
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 100px;
+    color: rgb(255,176,1);
+    border-bottom: 4px solid rgb(255,176,1);
+    border-radius: 5px;
+}
+.container-two .introduce {
+    width: 90vw;
+    height: 950px;
+    padding: 0 70px;
+    position: relative;
+    margin: 0 auto;
+}
+.container-two .introduce .picture {
+    width: 90vw;
+    height: 950px;
+    background-image: url('../images/GTA系列/《Grand Theft Auto》Series.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.container-two .introduce .text {
+    display: inline-block;
+    width: 90vw;
+    height: 950px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    background-color: black;
+    color: rgb(255,176,1);
+    transition: all 0.5s linear;
+    font-size: 30px;
+    text-indent: 30px;
+    font-weight: bold;
+    font-family: GTA font;
+}
+.container-two .introduce .text .paragragh1,
+.container-two .introduce .text .paragragh2,
+.container-two .introduce .text .paragragh3,
+.container-two .introduce .text .paragragh4 {
+    padding: 20px;
+}
+.container-two .introduce .text .paragragh5 {
+    column-count: 6;
+    column-rule: 2px dashed rgb(255,176,1);
+    font-size: 19px;
+    padding: 20px;
+}
+.container-two .introduce:hover .text {
+    opacity: 0.8;
+}
+.container-three .top-bar-three-vice{
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 100px;
+    color: rgb(205,6,21);
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 4px solid rgb(205,6,21);
+    border-radius: 5px;
+}
+.container-three .introduce {
+    margin: 0 auto;
+    width: 90vw;
+    height: 477px;
+    padding: 0 70px;
+    position: relative;
+}
+.container-three .introduce .picture {
+    width: 90vw;
+    height: 477px;
+    background-image: url('../images/RDR系列/RDR Series.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.container-three .introduce .text {
+    display: inline-block;
+    width: 90vw;
+    height: 477px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    background-color: black;
+    color: rgb(205,6,21);
+    transition: all 0.5s linear;
+    font-size: 37px;
+    text-indent: 37px;
+    font-weight: bold;
+    font-family: RDR font;
+}
+.container-three .introduce .text .paragragh1,
+.container-three .introduce .text .paragragh2 {
+    padding: 20px;
+}
+.container-three .introduce:hover .text {
+    opacity: 0.9;
+}
+.container-four .introduce {
+    margin: 0 auto;
+    width: 90vw;
+    padding: 0 70px;
+    position: relative;
+}
+.container-four .top-bar-four-vice {
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 100px;
+    color: rgb(242,171,79);
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 4px solid rgb(242,171,79);
+    border-radius: 5px;
+}
+.container-four .introduce .picture {
+    width: 90vw;
+    height: 620px;
+    background-image: url('../images/MP系列/Max Payne Series.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    cursor: pointer;
+    border-radius: 20px;
+}
+.container-four .introduce .text {
+    display: inline-block;
+    width: 90vw;
+    height: 620px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    background-color: black;
+    color: rgb(242,171,79);
+    transition: all 0.5s linear;
+    font-size: 42px;
+    text-indent: 37px;
+    font-weight: bold;
+}
+.container-four .introduce .text .paragragh1,
+.container-three .introduce .text .paragragh2,
+.container-three .introduce .text .paragragh3 {
+    padding: 20px;
+}
+.container-four .introduce:hover .text {
+    opacity: 0.7;
+}
+.footer {
+    width: 100%;
+    height: 900px;
+}
+.footer .top-footer {
+    margin: 100px;
+    display: flex;
+}
+.footer .top-footer .picture {
+    width: 200px;
+    height: 200px;
+    background-image: url('../images/Rockstar-Games-logo.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.footer .top-footer .text {
+    display: inline-block;
+    width: 1000px;
+    height: 100px;
+    line-height: 135px;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 50px;
+}
+.footer .top-footer .text a {
+    position: relative; /* 设置为相对定位，伪元素将相对于此定位 */
+    display: inline-block; /* 使链接不占满整行，以便更好的控制样式 */
+    color: rgb(255,176,1);
+    letter-spacing: 5px;
+    word-spacing: 20px;
+    padding: 20px;
+    transition: all 0.2s linear;
+    font-family: 'GTA font', sans-serif; /* 确保有后备字体 */
+    text-decoration: none; /* 去掉下划线 */
+    overflow: hidden; /* 确保伪元素不会溢出链接范围 */
+    padding: 0px 15px; /* 减少内边距 */
+    margin: 0; /* 减少外边距，根据需要调整 */
+}
+
+.footer .top-footer .text a::before {
+    content: '';
+    position: absolute;
+    z-index: -1; /* 确保伪元素在文字之下 */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 95%; /* 从下方开始 */
+    background-color: rgb(255,176,1);
+    border-radius: 30px;
+    transition: top 0.3s linear; /* 平滑过渡效果 */
+}
+
+.footer .top-footer .text a:hover::before {
+    top: 0; /* 悬浮时背景扩散到整个链接 */
+}
+
+.footer .top-footer .text a:hover {
+    color: black; /* 文字颜色变化 */
+    border: none; /* 去掉边框 */
+}
+
+.footer .middle-footer {
+    margin: 0px 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    bottom: 117px;
+}
+.footer .middle-footer .picture {
+    width: 150px;
+    height: 150px;
+    background-image: url('../images/rem.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.footer .middle-footer .text {
+    display: inline-block;
+    /* width: 1000px; */
+    height: 150px;
+    line-height: 135px;
+    font-size: 50px;
+    font-weight: bold;
+    margin-right: 70px;
+}
+.footer .middle-footer .text a {
+    position: relative;
+    display: inline-block;
+    color: rgb(0,172,229);
+    letter-spacing: 5px;
+    word-spacing: 20px;
+    padding: 20px;
+    transition: all 0.2s linear;
+    text-decoration: none;
+    overflow: hidden;
+    padding: 0px 15px;
+    margin: 0;
+}
+
+.footer .middle-footer .text a::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 95%;
+    background-color: rgb(0,172,229);
+    border-radius: 30px;
+    transition: top 0.3s linear;
+}
+
+.footer .middle-footer .text a:hover::before {
+    top: 0;
+}
+
+.footer .middle-footer .text a:hover {
+    color: white;
+    border: none;
+}
+.footer .line {
+    margin: 0 100px;
+    border-bottom: 3px solid rgb(255,176,1);
+    margin-bottom: 50px;
+
+}
+.footer .bottom-footer {
+    margin: 0 100px;
+    display: flex;
+    margin-bottom: 90px;
+}
+.footer .bottom-footer .contact {
+    margin-right: 50px;
+}
+.footer .bottom-footer a {
+    font-size: 30px;
+    transition: all 0.2s linear;
+}
+.footer .bottom-footer a img {
+    width: 30px;
+    height: 30px;
+}
+.footer .bottom-footer a:hover {
+    color: rgb(255,176,1);
+}
+.footer .ture-footer {
+    margin: 0 100px;
+    /* height: 100px; */
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+.footer .ture-footer .text {
+    display: inline-block;
+    color: rgb(147,147,147);
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+.footer .ture-footer .text:hover {
+    color: rgb(255,176,1);
+}
+.footer .absolute-footer {
+    margin: 0 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .absolute-footer .information {
+    font-size: 16px;
+    color: white;
+    display: flex;
+    font-weight: bold;
+}
+.footer .absolute-footer .information .city {
+    margin-right: 20px;
+}
+.all-information {
+    display: none;
+}
+#refresh {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s linear;
+    z-index: 1000;
+}
+#backToTop {
+    width: 50px;
+    height: 56px;
+    position: fixed;
+    bottom: 90px;
+    right: 10px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 10px;
+    transition: all 0.1s linear;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+#backToTop:hover,
+#refresh:hover {
+    background-color: rgb(193, 195, 197);
+}
+/* .all-information {
+    display: none;
+} */
+@media only screen and (max-width: 1550px) {
+    .button-container .slideshow-area-button {
+        width: 50px;
+    }   
+}
+@media only screen and (max-width: 768px) {
+    .top-bar .top-information {
+        display: none;
+    }
+    .footer .middle-footer .text a,
+    .footer .top-footer .text a {
+        letter-spacing: 0px;
+        word-spacing: 0px;
+    }
+    .footer .top-footer .text {
+        line-height: 40px;
+        font-size: 20px;
+    }
+    .footer .middle-footer .text {
+        line-height: 100px;
+        font-size: 20px;
+    }
+    .footer .middle-footer .picture {
+        width: 100px;
+        height: 100px;
+    }
+    .container-four .introduce .text,
+    .container-three .introduce .text,
+    .container-two .introduce .text {
+        overflow: hidden;
+    }
+    .active-text .explain .explain1 {
+        font-size: 9px;
+    }
+    .active-text .explain .explain2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .active-text .explain .special {
+        font-size: 19px;
+    }
+    .active-text a {
+        font-size: 12px;
+        width: 94px;
+        height: 36px;
+        line-height: 36px;
+    }
+    .top-bar {
+        /* 保持原样，但确保z-index合适 */
+        z-index: 100; /* 低于 .top-information */
+    }
+    .top-bar .top-information {
+        /* 确保它可以覆盖整个视口 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; /* 宽度为视口宽度 */
+        height: 100vh; /* 高度为视口高度 */
+        background-color: black; /* 设置背景为黑色 */
+        z-index: 1000; /* 确保其在顶层 */
+        flex-direction: column; /* 子元素垂直排列 */
+        justify-content: flex-start; /* 从顶部开始排列 */
+        align-items: center; /* 水平居中对齐 */
+    }
+    .top-bar .top-information .close-button {
+        display: inline-block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 10px;
+        cursor: pointer;
+        color: white;
+        background-color: red; /* 可以根据你的设计进行调整 */
+        border-radius: 5px;
+    }
+    .information {
+        text-align: center;
+        /* 每个导航链接的样式 */
+        padding: 10px;
+        border-bottom: 1px solid #ccc; /* 视觉分隔符 */
+    }
+    .all-information {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        background-color: black;
+        border-radius: 50%;
+    }
+    .tab-content {
+        position: relative; /* 必须设置定位属性才能使 z-index 生效 */
+        z-index: 1000; /* 或其他适当的值 */
+    }
+}
