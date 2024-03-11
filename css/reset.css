@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  font-size: 18px;
+  ;
+  color: white;
+}
+
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  border: 0px;
+}
+
+input {
+  appearance: none;
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+
+  color: #E6EBFF;
+
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+
+  color: #E6EBFF;
+
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+
+  color: #E6EBFF;
+
+}
+
+input:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+
+  color: #E6EBFF;
+
+}
+
+input::-ms-input-placeholder {
+  /* Microsoft Edge */
+
+  color: #E6EBFF;
+
+}
+
+/* 清除浮动，解决margin-top塌陷 */
+.clearfix:before,
+.clearfix:after {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}

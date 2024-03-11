@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>案例_天气预报</title>
+</head>
+
+<body>
+  <div class="container">
+    <!-- 顶部 -->
+    <div class="top-box">
+      <div class="title">
+        <span class="dateShort">10月28日</span>
+        <span class="calendar">农历&nbsp;
+          <span class="dateLunar">十月初四</span>
+        </span>
+      </div>
+      <div class="search-box">
+        <div class="location">
+          <img src="./imgs/定位.png" alt="">
+          <span class="area">城市名</span>
+        </div>
+        <!-- 搜索框+搜索列表 -->
+        <div class="search">
+          <input type="text" class="search-city" placeholder="搜索城市">
+          <ul class="search-list">
+            <li class="city-item">北京市</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 当前天气 -->
+    <div class="weather-box">
+      <div class="tem-box">
+        <span class="temp">
+          <span class="temperature">12</span>
+          <span>°</span>
+        </span>
+      </div>
+      <div class="climate-box">
+        <div class="air">
+          <span class="psPm25">55</span>
+          <span class="psPm25Level">良</span>
+        </div>
+        <ul class="weather-list">
+          <li>
+            <img src="./imgs/小雨-line.png" class="weatherImg" alt="">
+            <span class="weather">多云</span>
+          </li>
+          <li class="windDirection">东南风</li>
+          <li class="windPower">2级</li>
+        </ul>
+      </div>
+    </div>
+    <div class="today-weather">
+      <div class="range-box">
+        <span>今天：</span>
+        <span class="range">
+          <span class="weather">晴</span>
+          <span class="temNight">9</span>
+          <span>-</span>
+          <span class="temDay">14</span>
+          <span>℃</span>
+        </span>
+      </div>
+      <ul class="sun-list">
+        <li>
+          <span>紫外线</span>
+          <span class="ultraviolet">强</span>
+        </li>
+        <li>
+          <span>湿度</span>
+          <span class="humidity">53</span>%
+        </li>
+        <li>
+          <span>日出</span>
+          <span class="sunriseTime">06:38</span>
+        </li>
+        <li>
+          <span>日落</span>
+          <span class="sunsetTime">17:18</span>
+        </li>
+      </ul>
+    </div>
+    <!-- 周天气预报 -->
+    <div class="week-weather-box">
+      <div class="title">7日内天气预报</div>
+      <ul class="week-wrap">
+        <li class="item">
+          <div class="date-box">
+            <span class="dateFormat">今天</span>
+            <span class="date">10月28日</span>
+          </div>
+          <img src="./imgs/多云.png" alt="" class="weatherImg">
+          <span class="weather">多云</span>
+          <div class="temp">
+            <span class="temNight">12</span>-
+            <span class="temDay">12</span>
+            <span>℃</span>
+          </div>
+          <div class="wind">
+            <span class="windDirection">东南风</span>
+            <span class="windPower">&lt;3级</span>
+          </div>
+        </li>
+        <li class="item">
+          <div class="date-box">
+            <span class="dateFormat">今天</span>
+            <span class="date">10月28日</span>
+          </div>
+          <img src="./imgs/多云.png" alt="" class="weatherImg">
+          <span class="weather">多云</span>
+          <div class="temp">
+            <span class="temDay">12</span>-
+            <span class="temNight">12</span>
+            <span>℃</span>
+          </div>
+          <div class="wind">
+            <span class="windDirection">东南风</span>
+            <span class="windPower">&lt;3级</span>
+          </div>
+        </li>
+        <li class="item">
+          <div class="date-box">
+            <span class="dateFormat">今天</span>
+            <span class="date">10月28日</span>
+          </div>
+          <img src="./imgs/多云.png" alt="" class="weatherImg">
+          <span class="weather">多云</span>
+          <div class="temp">
+            <span class="temDay">12</span>-
+            <span class="temNight">12</span>
+            <span>℃</span>
+          </div>
+          <div class="wind">
+            <span class="windDirection">东南风</span>
+            <span class="windPower">&lt;3级</span>
+          </div>
+        </li>
+        <li class="item">
+          <div class="date-box">
+            <span class="dateFormat">今天</span>
+            <span class="date">10月28日</span>
+          </div>
+          <img src="./imgs/多云.png" alt="" class="weatherImg">
+          <span class="weather">多云</span>
+          <div class="temp">
+            <span class="temDay">12</span>-
+            <span class="temNight">12</span>
+            <span>℃</span>
+          </div>
+          <div class="wind">
+            <span class="windDirection">东南风</span>
+            <span class="windPower">&lt;3级</span>
+          </div>
+        </li>
+        <li class="item">
+          <div class="date-box">
+            <span class="dateFormat">今天</span>
+            <span class="date">10月28日</span>
+          </div>
+          <img src="./imgs/多云.png" alt="" class="weatherImg">
+          <span class="weather">多云</span>
+          <div class="temp">
+            <span class="temDay">12</span>-
+            <span class="temNight">12</span>
+            <span>℃</span>
+          </div>
+          <div class="wind">
+            <span class="windDirection">东南风</span>
+            <span class="windPower">&lt;3级</span>
+          </div>
+        </li>
+        <li class="item">
+          <div class="date-box">
+            <span class="dateFormat">今天</span>
+            <span class="date">10月28日</span>
+          </div>
+          <img src="./imgs/多云.png" alt="" class="weatherImg">
+          <span class="weather">多云</span>
+          <div class="temp">
+            <span class="temDay">12</span>-
+            <span class="temNight">12</span>
+            <span>℃</span>
+          </div>
+          <div class="wind">
+            <span class="windDirection">东南风</span>
+            <span class="windPower">&lt;3级</span>
+          </div>
+        </li>
+        <li class="item">
+          <div class="date-box">
+            <span class="dateFormat">今天</span>
+            <span class="date">10月28日</span>
+          </div>
+          <img src="./imgs/多云.png" alt="" class="weatherImg">
+          <span class="weather">多云</span>
+          <div class="temp">
+            <span class="temDay">12</span>-
+            <span class="temNight">12</span>
+            <span>℃</span>
+          </div>
+          <div class="wind">
+            <span class="windDirection">东南风</span>
+            <span class="windPower">&lt;3级</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script src="./js/lodash.min.js"></script>
+  <!-- 自己封装myAxios函数 -->
+  <script src="./js/my-axios.js"></script>
+  <!-- 搜索框+下拉菜单出现逻辑 -->
+  <script src="./js/search.js"></script>
+  <!-- 核心js -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
