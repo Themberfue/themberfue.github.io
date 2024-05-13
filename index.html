@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./favicon.ico" rel="shortcut icon">
+    <title>Themberfue-记账清单</title>
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: radial-gradient(circle at 32.2% 83.5%, rgb(239, 167, 167) 0%, rgb(215, 123, 191) 90%)
+      }
+      .red {
+        color: red!important;
+      }
+      .search {
+        width: 300px;
+        margin: 20px 0;
+      }
+      .my-form {
+        display: flex;
+        margin: 20px 0;
+      }
+      .my-form input {
+        flex: 1;
+        margin-right: 20px;
+      }
+      .table > :not(:first-child) {
+        border-top: none;
+      }
+      .contain {
+        display: flex;
+        padding: 10px;
+      }
+      .list-box {
+        flex: 1;
+        padding: 0 30px;
+      }
+      .list-box  a {
+        text-decoration: none;
+      }
+      .echarts-box {
+        width: 600px;
+        height: 500px;
+        padding: 30px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+      }
+      tfoot {
+        font-weight: bold;
+      }
+      @media screen and (max-width: 1000px) {
+        .contain {
+          flex-wrap: wrap;
+        }
+        .list-box {
+          width: 100%;
+        }
+        .echarts-box {
+          margin-top: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="contain">
+        <!-- 左侧列表 -->
+        <div class="list-box">
+
+          <!-- 添加资产 -->
+          <form class="my-form">
+            <input type="text" class="form-control" placeholder="消费名称" v-model.trim="name" @keyup.enter="add"/>
+            <input type="text" class="form-control" placeholder="消费价格" v-model.number="price" @keyup.enter="add"/>
+            <button type="button" class="btn btn-primary" @click="add">添加账单</button>
+          </form>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>编号</th>
+                <th>消费名称</th>
+                <th>消费价格</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) in list" :key="item.id">
+                <td>{{index + 1}}</td>
+                <td>{{item.name}}</td>
+                <td :class="{red: item.price > 500}">{{item.price.toFixed(2)}}</td>
+                <td><a href="javascript:;" @click="del(item.id)">删除</a></td>
+              </tr>
+            <tfoot>
+              <tr>
+                <td colspan="4">消费总计： {{totalPrice}}</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- 右侧图表 -->
+        <div class="echarts-box" id="main"></div>
+      </div>
+    </div>
+    <script src="./echarts.min.js"></script>
+    <script src="./vue.js"></script>
+    <script src="./axios.js"></script>
+    <script>
+      /**
+       * 接口文档地址：
+       * https://www.apifox.cn/apidoc/shared-24459455-ebb1-4fdc-8df8-0aff8dc317a8/api-53371058
+       * 
+       * 功能需求：
+       * 1. 基本渲染
+       *   (1) 立刻发送请求获取数据（created）
+       *   (2) 拿到数据，存到 data的响应式数据中
+       *   (3) 结合数据，进行渲染 v-for
+       *   (4) 消费统计 => 计算属性
+       * 2. 添加功能
+       *   (1) 收集表单数据 v-model
+       *   (2) 给添加按钮注册点击事件，发送添加请求
+       *   (3) 需要重新渲染
+       * 3. 删除功能
+       *   (1) 注册点击事件，传参数 id
+       *   (2) 根据 id发送删除请求
+       * 4. 饼图渲染
+       *   (1) 初始化一个饼图 echarts.init(dom) mounted钩子实现
+       *   (2) 根据数据实时更新饼图（echarts.setOption({})）
+       */
+      const app = new Vue({
+        el: '#app',
+        data: {
+          list: [],
+          name: '',
+          price: ''
+        },
+        methods: {
+          async getList() {
+            const res = await axios.get('https://applet-base-api-t.itheima.net/bill', {
+              params: {
+                creator: 'Themberfue'
+              }
+            })
+            this.list = res.data.data
+
+            // 更新图标
+            this.myChart.setOption({
+              // 数据项
+              series: [
+                {
+                  data: this.list.map(item => ({value: item.price, name: item.name}))
+                }
+              ]
+            })
+          },
+          async add() {
+            const res = await axios.post('https://applet-base-api-t.itheima.net/bill', {
+              creator: 'Themberfue',
+              name: this.name,
+              price: this.price
+            })
+            // 重新渲染
+            this.getList()
+
+            if (this.name === '') {
+              return alert('请输入有效的消费名称')
+            }
+            if (typeof this.price !== 'number' || this.price <= 0) {
+              return alert('请输入有效的消费价格')
+            }
+
+            this.name = ''
+            this.price = ''
+          },
+          async del(id) {
+            const res = await axios.delete(`https://applet-base-api-t.itheima.net/bill/${id}`)
+            this.getList()
+          }
+        },
+        computed: {
+          totalPrice() {
+            return (this.list.reduce((sum, item) => sum + item.price, 0)).toFixed(2)
+          }
+        },
+        created() {
+          this.getList()
+        },
+        mounted() {
+         this.myChart = echarts.init(document.querySelector('#main'))
+         this.myChart.setOption({
+          title: {
+             text: '消费账单列表',
+             left: 'center'
+           },
+           tooltip: {
+             trigger: 'item'
+           },
+           legend: {
+             orient: 'vertical',
+             left: 'left'
+           },
+           series: [
+             {
+               name: 'Access From',
+               type: 'pie',
+               radius: '50%',
+               data: [
+                 { value: 1048, name: 'Search Engine' },
+                 { value: 735, name: 'Direct' },
+                 { value: 580, name: 'Email' },
+                 { value: 484, name: 'Union Ads' },
+                 { value: 300, name: 'Video Ads' }
+               ],
+               emphasis: {
+                 itemStyle: {
+                   shadowBlur: 10,
+                   shadowOffsetX: 0,
+                   shadowColor: 'rgba(0, 0, 0, 0.5)'
+                 }
+               }
+             }
+           ]
+         })
+        },
+      })
+    </script>
+  </body>
+</html>
