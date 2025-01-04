@@ -1,0 +1,76 @@
+body {
+    background-color: rgb(1, 118, 214);
+    color: #fff;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+.container {
+    width: 82vw;
+    height: 90vh;
+    margin: 0 auto;
+}
+.container .emoji {
+    font-size: 150px;
+}
+.container .title {
+    font-size: 20px;
+    padding: 5px 0px;
+}
+.container .done {
+    font-size: 20px;
+    padding: 20px 0px;
+}
+.container img {
+    width: 130px;
+    height: 130px;
+}
+.container .information {
+    font-size: 13px;
+    width: 30vw;
+    height: 10vw;
+    display: inline-block;
+    position: relative;
+    bottom: 12px;
+    left: 5px;
+}
+.container .information .more {
+    padding: 4px 0px;
+}
+.container .information .more3 {
+    padding-top: 10px;
+}
+@media (max-width: 500px) {
+    .container .emoji {
+        font-size: 100px;
+    }
+    .container .title {
+        font-size: 21px;
+        padding: 5px 0px;
+    }
+    .container .done {
+        font-size: 21px;
+        padding: 7px 0px;
+    }
+    .container img {
+        width: 100px;
+        height: 100px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .container .information {
+        font-size: 12px;
+        width: 89vw;
+        height: 10vw;
+        position: relative;
+        bottom: 0px;
+        left: 0px
+    }
+    .container .information .more { 
+        padding: 2px 0px;
+    }
+    .container .information .more3 {
+        padding-top: 5px;
+    }
+}
